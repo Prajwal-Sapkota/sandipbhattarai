@@ -9,6 +9,9 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "npm": {
+  "install-args": "--legacy-peer-deps"
+},
   
   "dependencies": {
     "@studio-freight/lenis": "^1.0.42",

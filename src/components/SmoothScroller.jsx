@@ -5,10 +5,10 @@ function SmoothScroller({ children }) {
   useEffect(() => {
     // Initialize Lenis with premium settings
     const lenis = new Lenis({
-      duration: 0.8,
+      duration: 2.1,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
       smoothWheel: true,
-      smoothTouch: false, // Disable on touch devices for better performance
+      smoothTouch: false, 
       touchMultiplier: 2,
       infinite: false,
     });

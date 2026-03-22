@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { FaLinkedinIn, FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const imageRef = useRef(null);
@@ -7,6 +8,13 @@ const Hero = () => {
   const nameRef = useRef(null);
   const bottomLeftRef = useRef(null);
   const socialRef = useRef(null);
+
+  const socialLinks = [
+    { icon: FaLinkedinIn, url: "https://www.linkedin.com/in/mesandipb/", label: "LinkedIn" },
+    { icon: FaFacebookF, url: "https://www.facebook.com/mesandipb", label: "Facebook" },
+    { icon: FaTwitter, url: "https://x.com/mesandipb", label: "Twitter" },
+    { icon: FaInstagram, url: "https://www.instagram.com/mesandipb/", label: "Instagram" }
+  ];
 
   useEffect(() => {
     if (imageRef.current) {
@@ -74,7 +82,7 @@ const Hero = () => {
         <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-[#F5F0E8] via-[#F5F0E8]/80 to-transparent block md:hidden" />
       </div>
 
-      {/* DESKTOP CONTENT - EXACTLY AS YOUR ORIGINAL */}
+      {/* DESKTOP CONTENT */}
       <div className="hidden md:block relative z-10 min-h-screen px-20 py-12">
         <div
           ref={topLeftRef}
@@ -87,7 +95,7 @@ const Hero = () => {
               {["Technology.", "Vision.", "Success."].map((text, i) => (
                 <p
                   key={i}
-                  className={`text-3xl font-['Marcellus'] ${
+                  className={`text-3xl  ${
                     i === 2 ? "text-[#9B8B7A]" : "text-[#5F5B57]"
                   }`}
                   style={{
@@ -109,10 +117,10 @@ const Hero = () => {
           style={{ transform: "translateY(10px)" }}
         >
           <div className="relative">
-            <span className="text-xs tracking-[0.3em] text-[#9B8B7A] block mb-2">
+            <span className="text-xs tracking-[0.3em] text-[#9B8B7A] block mb-2 ">
               TECHNOLOGY LEADER
             </span>
-            <h1 className="text-7xl lg:text-8xl leading-[0.9]">
+            <h1 className="text-7xl lg:text-8xl leading-[0.9] ">
               <span className="text-[#2C2C2C] block">Sandip</span>
               <span className="text-[#9B8B7A] relative block mt-2">
                 Bhattarai
@@ -128,9 +136,9 @@ const Hero = () => {
           <div className="space-y-2">
             <div className="flex items-center gap-3">
               <div className="w-8 h-px bg-[#E6B8A2]" />
-              <span className="text-xs tracking-[0.2em] text-[#9B8B7A] font-['Jost']">VISION</span>
+              <span className="text-xs tracking-[0.2em] text-[#9B8B7A] ">VISION</span>
             </div>
-            <p className="text-2xl font-['Marcellus'] text-[#2C2C2C] max-w-sm">
+            <p className="text-2xl  text-[#2C2C2C] max-w-sm">
               Leading the future of IT solutions
             </p>
           </div>
@@ -140,10 +148,12 @@ const Hero = () => {
           ref={socialRef}
           className="absolute left-20 top-1/2 -translate-y-1/2 flex flex-col gap-6 opacity-0 transition-opacity duration-700"
         >
-          {[FaLinkedinIn, FaFacebookF, FaTwitter, FaInstagram].map((Icon, i) => (
-            <a
+          {socialLinks.map((social, i) => (
+            <Link
               key={i}
-              href="#"
+              to={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-12 h-12 flex items-center justify-center border border-[#9B8B7A]/30 rounded-full text-[#9B8B7A] hover:text-white hover:bg-[#9B8B7A] transition-all duration-300"
               style={{
                 animation: `scaleIn 0.4s ${1.5 + i * 0.1}s forwards`,
@@ -151,71 +161,49 @@ const Hero = () => {
                 transform: "scale(0.9)",
               }}
             >
-              <Icon size={16} />
-            </a>
+              <social.icon size={16} />
+            </Link>
           ))}
         </div>
       </div>
 
-      {/* MOBILE CONTENT - SEPARATE LAYOUT */}
+      {/* MOBILE CONTENT */}
       <div className="block md:hidden relative z-10 min-h-screen px-6 py-12">
         {/* Name at top */}
-        <div
-          className="absolute top-16 left-0 right-0 text-center"
-        >
-          <span className="text-[10px] tracking-[0.3em] text-[#9B8B7A] block mb-1">
+        <div className="absolute top-16 left-0 right-0 text-center">
+          <span className="text-[10px] tracking-[0.3em] text-[#9B8B7A] block mb-1 ">
             TECHNOLOGY LEADER
           </span>
-          <h1 className="text-4xl leading-[0.9] text-[#2C2C2C]">
+          <h1 className="text-4xl leading-[0.9] text-[#2C2C2C] ">
             <span className="block">Sandip</span>
             <span className="text-[#9B8B7A] block mt-1">Bhattarai</span>
           </h1>
         </div>
 
         {/* Social icons left */}
-        <div
-          className="absolute left-4 top-1/2 -translate-y-1/2 flex flex-col gap-3"
-        >
-          {[FaLinkedinIn, FaFacebookF, FaTwitter, FaInstagram].map((Icon, i) => (
-            <a
+        <div className="absolute left-4 top-1/2 -translate-y-1/2 flex flex-col gap-3">
+          {socialLinks.map((social, i) => (
+            <Link
               key={i}
-              href="#"
+              to={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-9 h-9 flex items-center justify-center border border-[#9B8B7A]/30 rounded-full text-[#9B8B7A] hover:text-white hover:bg-[#9B8B7A] transition-all duration-300 bg-white/80 backdrop-blur-sm"
             >
-              <Icon size={12} />
-            </a>
+              <social.icon size={12} />
+            </Link>
           ))}
         </div>
 
-        {/* Tech Vision Success below icons */}
-        {/* <div
-          className="absolute left-4 top-[calc(70%+40px)] -translate-y-1/2"
-        >
-          <div className="space-y-1">
-            {["Technology.", "Vision.", "Success."].map((text, i) => (
-              <p
-                key={i}
-                className={`text-base font-['Marcellus'] ${
-                  i === 2 ? "text-[#9B8B7A]" : "text-[#5F5B57]"
-                }`}
-              >
-                {text}
-              </p>
-            ))}
-          </div>
-        </div> */}
-
         {/* Bottom center */}
-        <div
-          className="absolute bottom-1 left-0 right-0 text-center"
-        >
+        <div className="absolute bottom-1 left-0 right-0 text-center">
           <div className="space-y-1">
             <div className="flex items-center justify-center gap-2">
               <div className="w-6 h-px bg-[#E6B8A2]" />
-              <span className="text-[10px] tracking-[0.2em] text-[#9B8B7A] font-['Jost']">VISION</span>
+              <span className="text-[10px] tracking-[0.2em] text-[#9B8B7A] ">VISION</span>
               <div className="w-6 h-px bg-[#E6B8A2]" />
             </div>
-            <p className="text-sm font-['Marcellus'] text-[#2C2C2C] max-w-[200px] mx-auto">
+            <p className="text-sm  text-[#2C2C2C] max-w-[200px] mx-auto">
               Leading the future of IT solutions
             </p>
           </div>

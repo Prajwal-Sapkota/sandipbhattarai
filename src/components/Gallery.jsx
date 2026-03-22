@@ -40,7 +40,7 @@ const Gallery = () => {
         
         {/* Header */}
         <div className="mb-16">
-          <h2 className="text-5xl md:text-6xl font-['Marcellus'] text-[#2C2C2C]">
+          <h2 className="text-5xl md:text-6xl    text-[#2C2C2C]">
             Visual <span className="italic text-[#9B8B7A]">Legacy</span>
           </h2>
           <div className="w-16 h-px bg-[#9B8B7A] mt-4" />
@@ -99,7 +99,7 @@ const Gallery = () => {
                     
                     {/* Title */}
                     <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
-                      <p className="text-lg font-['Marcellus']">{img.title}</p>
+                      <p className="text-lg   ">{img.title}</p>
                     </div>
                   </div>
                 </div>
@@ -109,7 +109,7 @@ const Gallery = () => {
         </div>
 
         {/* Instructions */}
-        <div className="text-center mt-8 text-sm text-[#9B8B7A] font-['Jost']">
+        <div className="text-center mt-8 text-sm text-[#9B8B7A]   ">
           Hover to pause · Click image to expand
         </div>
 

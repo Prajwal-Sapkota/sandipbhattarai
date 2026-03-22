@@ -209,3 +209,18 @@ html.lenis, html.lenis body {
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
 }
+h1,
+h2,
+h3,
+button {
+  font-family: "Marcellus";
+}
+
+a,
+p,
+span,
+input,
+select,
+option {
+  font-family: "Jost";
+}

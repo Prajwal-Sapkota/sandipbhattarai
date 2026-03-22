@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { FiMenu, FiX, FiArrowRight } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,9 +33,9 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'About', href: '/about' },
-    { name: 'Gallery', href: '#gallery' },
-    { name: 'Blogs', href: '#blogs' },
-    { name: 'Connect', href: '#connect' }
+    { name: 'Gallery', href: '/gallery' },
+    { name: 'Blogs', href: '/blogs' },
+    { name: 'Connect', href: '/connect' }
   ];
 
   return (
@@ -51,14 +52,14 @@ const Navbar = () => {
             : 'bg-transparent'
         }`}>
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.name}
-              href={item.href}
-              className="relative px-5 py-2 text-sm font-['Jost'] text-[#5F5B57] hover:text-[#2C2C2C] transition-colors duration-300 group"
+              to={item.href}
+              className="relative px-5 py-2 text-sm    text-[#5F5B57] hover:text-[#2C2C2C] transition-colors duration-300 group"
             >
               {item.name}
               <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-px bg-[#E6B8A2] group-hover:w-full transition-all duration-300" />
-            </a>
+            </Link>
           ))}
           
         </nav>
@@ -92,10 +93,10 @@ const Navbar = () => {
          
           {/* Brand */}
           <div className="mb-12">
-            <h2 className="text-3xl font-['Marcellus'] text-[#2C2C2C]">
+            <h2 className="text-3xl    text-[#2C2C2C]">
               Sandip<span className="text-[#9B8B7A]">.</span>
             </h2>
-            <p className="text-sm text-[#5F5B57] font-['Jost'] mt-2">
+            <p className="text-sm text-[#5F5B57]    mt-2">
               Technology Leader
             </p>
           </div>
@@ -103,14 +104,14 @@ const Navbar = () => {
           {/* Navigation Links */}
           <nav className="flex-1">
             {navItems.map((item, index) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
+                to={item.href}
                 onClick={() => setIsOpen(false)}
-                className="block py-4 text-2xl font-['Marcellus'] text-[#2C2C2C] hover:text-[#9B8B7A] transition-colors border-b border-[#9B8B7A]/10"
+                className="block py-4 text-2xl    text-[#2C2C2C] hover:text-[#9B8B7A] transition-colors border-b border-[#9B8B7A]/10"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </nav>
 

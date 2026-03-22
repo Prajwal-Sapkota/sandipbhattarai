@@ -1,5 +1,6 @@
 import { useRef, useEffect } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Journey = () => {
   const containerRef = useRef(null);
@@ -94,18 +95,18 @@ const Journey = () => {
             service, managing a business, and the importance of adaptability.
           </p>
 
-          {/* BUTTON */}
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="group relative px-8 lg:px-10 py-3 lg:py-4 border border-black/20 rounded-full overflow-hidden mx-auto lg:mx-0 inline-block"
-          >
-            <span className="absolute inset-0 bg-black translate-y-full group-hover:translate-y-0 transition duration-500"></span>
-
-            <span className="relative z-10 text-xs lg:text-sm uppercase tracking-widest font-medium group-hover:text-white transition">
-              Learn More 
-            </span>
-          </motion.button>
+          <Link to="/about" onClick={window.scrollTo(0,0)}>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="group relative px-8 lg:px-10 py-3 lg:py-4 border border-black/20 rounded-full overflow-hidden mx-auto lg:mx-0 inline-block"
+            >
+              <span className="absolute inset-0 bg-black translate-y-full group-hover:translate-y-0 transition duration-500"></span>
+              <span className="relative z-10 text-xs lg:text-sm uppercase tracking-widest font-medium group-hover:text-white transition">
+                Learn More
+              </span>
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
     </section>

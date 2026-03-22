@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import MagneticButton from './MAgneticButton';
+import { Link } from 'react-router-dom';
 
 const Connect = () => {
   const [formData, setFormData] = useState({
@@ -27,13 +28,13 @@ const Connect = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Contact Info */}
           <div>
-            <span className="text-[#0D5F58] text-sm font-['Jost'] tracking-[0.3em] uppercase">
+            <span className="text-[#0D5F58] text-sm   tracking-[0.3em] uppercase">
               Get in Touch
             </span>
-            <h2 className="text-4xl md:text-5xl font-['Marcellus'] text-[#1A1A1A] mt-4 mb-6">
+            <h2 className="text-4xl md:text-5xl    text-[#1A1A1A] mt-4 mb-6">
               Let's Create Something Extraordinary
             </h2>
-            <p className="text-[#1A1A1A]/70 text-lg font-['Jost'] mb-8">
+            <p className="text-[#1A1A1A]/70 text-lg   mb-8">
               Whether you have a project in mind or just want to chat about technology and hospitality, I'd love to hear from you.
             </p>
 
@@ -45,9 +46,9 @@ const Connect = () => {
                     <span className="text-[#0D5F58]">📍</span>
                   </div>
                   <div>
-                    <h3 className="font-['Marcellus'] text-[#1A1A1A] text-lg">{location.city}</h3>
-                    <p className="text-[#1A1A1A]/60 font-['Jost'] text-sm">{location.address}</p>
-                    <p className="text-[#0D5F58] font-['Jost'] text-sm mt-1">{location.phone}</p>
+                    <h3 className="   text-[#1A1A1A] text-lg">{location.city}</h3>
+                    <p className="text-[#1A1A1A]/60   text-sm">{location.address}</p>
+                    <p className="text-[#0D5F58]   text-sm mt-1">{location.phone}</p>
                   </div>
                 </div>
               ))}
@@ -59,10 +60,10 @@ const Connect = () => {
                 <span className="text-[#0D5F58]">✉️</span>
               </div>
               <div>
-                <p className="text-[#1A1A1A]/60 font-['Jost'] text-sm">Email</p>
-                <a href="mailto:sandip@bhattarai.com" className="text-[#0D5F58] font-['Jost'] hover:underline">
+                <p className="text-[#1A1A1A]/60   text-sm">Email</p>
+                <Link to="mailto:sandip@bhattarai.com" className="text-[#0D5F58]   hover:underline">
                   sandip@bhattarai.com
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -74,7 +75,7 @@ const Connect = () => {
             viewport={{ once: true }}
             className="bg-white p-8 rounded-3xl shadow-2xl"
           >
-            <h3 className="text-2xl font-['Marcellus'] text-[#1A1A1A] mb-6">Send a Message</h3>
+            <h3 className="text-2xl    text-[#1A1A1A] mb-6">Send a Message</h3>
             
             <form className="space-y-6">
               <div>
@@ -84,7 +85,7 @@ const Connect = () => {
                   placeholder="Your Name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full py-3 bg-transparent border-b border-stone-200 focus:border-[#0D5F58] outline-none transition-colors font-['Jost']"
+                  className="w-full py-3 bg-transparent border-b border-stone-200 focus:border-[#0D5F58] outline-none transition-colors  "
                 />
               </div>
               
@@ -95,7 +96,7 @@ const Connect = () => {
                   placeholder="Your Email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full py-3 bg-transparent border-b border-stone-200 focus:border-[#0D5F58] outline-none transition-colors font-['Jost']"
+                  className="w-full py-3 bg-transparent border-b border-stone-200 focus:border-[#0D5F58] outline-none transition-colors  "
                 />
               </div>
               
@@ -106,14 +107,14 @@ const Connect = () => {
                   rows="4"
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full py-3 bg-transparent border-b border-stone-200 focus:border-[#0D5F58] outline-none transition-colors resize-none font-['Jost']"
+                  className="w-full py-3 bg-transparent border-b border-stone-200 focus:border-[#0D5F58] outline-none transition-colors resize-none "
                 />
               </div>
 
               <MagneticButton>
                 <button
                   type="submit"
-                  className="w-full px-8 py-4 bg-[#0D5F58] text-white rounded-full hover:bg-[#0D5F58]/90 transition-all font-['Jost'] text-lg"
+                  className="w-full px-8 py-4 bg-[#0D5F58] text-white rounded-full hover:bg-[#0D5F58]/90 transition-all  text-lg"
                 >
                   Send Message
                 </button>

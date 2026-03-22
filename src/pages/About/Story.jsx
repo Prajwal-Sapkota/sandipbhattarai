@@ -9,7 +9,7 @@ const Story = () => {
     offset: ["start start", "end end"],
   });
 
-  // Kinetic title animation: Fades and scales as you descend into the story
+  // Kinetic title animation
   const titleOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
   const titleScale = useTransform(scrollYProgress, [0, 0.15], [1, 0.9]);
   const titleY = useTransform(scrollYProgress, [0, 0.15], [0, -50]);
@@ -39,7 +39,7 @@ const Story = () => {
       tag: "June 2019",
       image: "/images/gallery5.jpg", 
       content: "Returning to Pokhara with our second branch, we now deliver top-notch IT solutions tailored to global standards while staying true to our local roots.",
-      color: "bg-[#FBFBFB]",
+      color: "bg-[#f5f0e9]",
       textColor: "text-[#2C2C2C]"
     }
   ];
@@ -47,54 +47,51 @@ const Story = () => {
   return (
     <section ref={containerRef} className="relative bg-[#F5F0E8]">
       
-      {/* 🏛️ ABOUT ME HEADER (Sticky Title Layer) */}
+      {/* STICKY HEADER */}
       <motion.div 
         style={{ opacity: titleOpacity, scale: titleScale, y: titleY }}
-        className="sticky top-0 h-screen w-full flex flex-col items-center justify-center z-0 pointer-events-none"
+        className="sticky top-0 h-screen w-full flex flex-col items-center justify-center z-0 pointer-events-none px-4 sm:px-6 md:px-0"
       >
         {/* Background decorative elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-64 h-64 border border-[#9B8B7A]/10 rounded-full" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 border border-[#E6B8A2]/10 rounded-full" />
+          <div className="absolute top-20 left-10 w-40 sm:w-48 md:w-64 h-40 sm:h-48 md:h-64 border border-[#9B8B7A]/10 rounded-full hidden sm:block" />
+          <div className="absolute bottom-20 right-10 w-56 sm:w-72 md:w-96 h-56 sm:h-72 md:h-96 border border-[#E6B8A2]/10 rounded-full hidden md:block" />
         </div>
 
-        <span className="text-[#9B8B7A] text-xs tracking-[1em] uppercase font-bold mb-4 relative z-10">
+        <span className="text-[#9B8B7A] text-[9px] sm:text-[10px] md:text-xs tracking-[0.4em] sm:tracking-[0.7em] md:tracking-[1em] uppercase font-bold mb-2 sm:mb-3 md:mb-4 relative z-10">
           About Me
         </span>
         
-        <h1 className="text-[12vw] md:text-[8vw] font-['Marcellus'] text-[#2C2C2C] leading-none text-center relative z-10">
+        <h1 className="text-[12vw] sm:text-[11vw] md:text-[8vw]    text-[#2C2C2C] leading-[1.1] text-center relative z-10">
           Sandip <br /> <span className="italic text-[#9B8B7A]">Bhattarai</span>
         </h1>
         
-        {/* 🔥 WOW QUOTE - Right below name */}
-        <div className="relative z-10 mt-8 max-w-3xl mx-auto px-6">
+        {/* QUOTE */}
+        <div className="relative z-10 mt-4 sm:mt-6 md:mt-8 max-w-3xl mx-auto px-3 sm:px-4 md:px-6">
           <div className="relative">
-            {/* Decorative quote marks */}
-            <span className="absolute -top-6 -left-6 text-6xl text-[#E6B8A2]/20 font-['Marcellus']">"</span>
-            <p className="text-xl md:text-2xl lg:text-3xl font-['Jost'] italic text-[#5F5B57] text-center leading-relaxed">
+            <span className="absolute -top-3 sm:-top-4 md:-top-6 -left-2 sm:-left-3 md:-left-6 text-3xl sm:text-4xl md:text-6xl text-[#E6B8A2]/20   ">"</span>
+            <p className="text-xs sm:text-sm md:text-xl lg:text-2xl xl:text-3xl    italic text-[#5F5B57] text-center leading-relaxed px-2">
               Technology is only as good as the <span className="text-[#2C2C2C] font-medium not-italic">peace of mind</span> it provides.
             </p>
-            <span className="absolute -bottom-10 -right-6 text-6xl text-[#E6B8A2]/20 font-['Marcellus']">"</span>
+            <span className="absolute -bottom-4 sm:-bottom-5 md:-bottom-10 -right-2 sm:-right-3 md:-right-6 text-3xl sm:text-4xl md:text-6xl text-[#E6B8A2]/20   ">"</span>
           </div>
           
-          {/* Decorative line */}
-          <div className="flex justify-center items-center gap-3 mt-8">
-            <div className="w-12 h-px bg-[#9B8B7A]/30" />
-            <span className="text-[10px] tracking-[0.3em] text-[#9B8B7A] uppercase">Founder · S.A.I.T Solution</span>
-            <div className="w-12 h-px bg-[#9B8B7A]/30" />
+          <div className="flex justify-center items-center gap-2 sm:gap-3 md:gap-3 mt-3 sm:mt-4 md:mt-8">
+            <div className="w-6 sm:w-8 md:w-12 h-px bg-[#9B8B7A]/30" />
+            <span className="text-[7px] sm:text-[8px] md:text-[10px] tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.3em] text-[#9B8B7A] uppercase whitespace-nowrap">Founder · S.A.I.T Solution</span>
+            <div className="w-6 sm:w-8 md:w-12 h-px bg-[#9B8B7A]/30" />
           </div>
         </div>
         
-        <div className="mt-16 flex flex-col items-center gap-4 relative z-10">
-          <div className="w-px h-24 bg-gradient-to-b from-[#9B8B7A] to-transparent" />
-          <span className="text-[10px] text-[#9B8B7A] uppercase tracking-[0.3em]">Scroll to Explore My Journey</span>
+        <div className="mt-6 sm:mt-10 md:mt-16 flex flex-col items-center gap-2 sm:gap-3 md:gap-4 relative z-10">
+          <div className="w-px h-12 sm:h-16 md:h-24 bg-gradient-to-b from-[#9B8B7A] to-transparent" />
+          <span className="text-[7px] sm:text-[8px] md:text-[10px] text-[#9B8B7A] uppercase tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.3em] whitespace-nowrap">Scroll to Explore My Journey</span>
         </div>
 
-        {/* Decorative elements */}
-        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 w-32 h-32 border border-[#E6B8A2]/20 rounded-full" />
+        <div className="absolute bottom-8 sm:bottom-12 md:bottom-20 left-1/2 -translate-x-1/2 w-20 sm:w-24 md:w-32 h-20 sm:h-24 md:h-32 border border-[#E6B8A2]/20 rounded-full hidden sm:block" />
       </motion.div>
 
-      {/* 📄 THE CHAPTER STACK */}
+      {/* CHAPTER STACK */}
       <div className="relative z-10">
         {chapters.map((chapter, index) => (
           <ChapterCard 
@@ -112,21 +109,21 @@ const Story = () => {
 const ChapterCard = ({ chapter, index, isLast }) => {
   return (
     <div 
-      className={`relative w-full h-screen flex items-center justify-center p-6 md:p-12 
+      className={`relative w-full min-h-screen flex items-center justify-center py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12
         ${!isLast ? "sticky top-0" : "relative"}`}
     >
-      {/* Background with shadow for the "Stacking" depth */}
+      {/* Background */}
       <div className={`absolute inset-0 ${chapter.color} shadow-[0_-30px_60px_rgba(0,0,0,0.12)]`} />
 
-      <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center gap-12 lg:gap-24">
+      <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center gap-6 sm:gap-8 md:gap-12 lg:gap-24">
         
         {/* IMAGE SIDE */}
         <motion.div 
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ margin: "-10%" }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className={`w-full md:w-1/2 aspect-[3/4] max-h-[75vh] overflow-hidden rounded-sm shadow-2xl 
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className={`w-full md:w-1/2 aspect-[3/4] max-h-[45vh] sm:max-h-[55vh] md:max-h-[75vh] overflow-hidden rounded-lg md:rounded-sm shadow-xl md:shadow-2xl 
             ${index % 2 === 0 ? "md:order-1" : "md:order-2"}`}
         >
           <img 
@@ -138,31 +135,31 @@ const ChapterCard = ({ chapter, index, isLast }) => {
 
         {/* TEXT SIDE */}
         <motion.div 
-          initial={{ opacity: 0, x: index % 2 === 0 ? 40 : -40 }}
+          initial={{ opacity: 0, x: index % 2 === 0 ? 30 : -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ margin: "-10%" }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-          className={`w-full md:w-1/2 flex flex-col justify-center 
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+          className={`w-full md:w-1/2 flex flex-col justify-center text-center md:text-left
             ${index % 2 === 0 ? "md:order-2" : "md:order-1"}`}
         >
-          <div className="flex items-center gap-4 mb-6">
-            <span className={`text-[10px] tracking-[0.5em] font-bold uppercase ${chapter.textColor} opacity-40`}>
+          <div className="flex items-center justify-center md:justify-start gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4 md:mb-6">
+            <span className={`text-[7px] sm:text-[8px] md:text-[10px] tracking-[0.25em] sm:tracking-[0.3em] md:tracking-[0.5em] font-bold uppercase ${chapter.textColor} opacity-40`}>
               Chapter {chapter.id}
             </span>
-            <div className={`w-12 h-px ${index === 1 ? "bg-white/20" : "bg-black/10"}`} />
+            <div className={`w-6 sm:w-8 md:w-12 h-px ${index === 1 ? "bg-white/20" : "bg-black/10"}`} />
           </div>
 
-          <h2 className={`text-5xl md:text-7xl font-['Marcellus'] ${chapter.textColor} mb-8 leading-[1.1] tracking-tighter`}>
+          <h2 className={`text-2xl sm:text-3xl md:text-5xl lg:text-7xl    ${chapter.textColor} mb-3 sm:mb-4 md:mb-8 leading-[1.2] md:leading-[1.1] tracking-tighter`}>
             {chapter.title}
           </h2>
 
-          <p className={`text-lg md:text-xl font-['Jost'] font-light leading-relaxed ${chapter.textColor} opacity-80 mb-10 max-w-lg`}>
+          <p className={`text-xs sm:text-sm md:text-lg lg:text-xl    font-light leading-relaxed ${chapter.textColor} opacity-80 mb-5 sm:mb-6 md:mb-10 max-w-lg mx-auto md:mx-0`}>
             {chapter.content}
           </p>
 
-          <div className="flex items-center gap-4">
-            <div className={`w-8 h-px ${index === 1 ? "bg-[#E6B8A2]" : "bg-[#9B8B7A]"}`} />
-            <span className={`text-xs tracking-[0.3em] font-bold uppercase ${chapter.textColor} opacity-60`}>
+          <div className="flex items-center justify-center md:justify-start gap-2 sm:gap-3 md:gap-4">
+            <div className={`w-5 sm:w-6 md:w-8 h-px ${index === 1 ? "bg-[#E6B8A2]" : "bg-[#9B8B7A]"}`} />
+            <span className={`text-[9px] sm:text-[10px] md:text-xs tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.3em] font-bold uppercase ${chapter.textColor} opacity-60`}>
               {chapter.tag}
             </span>
           </div>

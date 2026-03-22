@@ -82,14 +82,14 @@ const Expertise = () => {
           
           {/* Left Text */}
           <div ref={headerRef} className="animate-text w-full">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-['Marcellus'] text-[#2C2C2C] leading-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl    text-[#2C2C2C] leading-tight">
               12 Years of
               <span className="block italic text-[#9B8B7A] mt-2">
                 Operational Excellence
               </span>
             </h2>
             <div className="w-20 h-px bg-[#9B8B7A] my-6 md:my-8" />
-            <p className="text-[#5F5B57] font-['Jost'] text-base md:text-lg max-w-xl">
+            <p className="text-[#5F5B57]    text-base md:text-lg max-w-xl">
               Transforming traditional business models through strategic digital
               intervention and a decade of IT leadership.
             </p>
@@ -122,14 +122,14 @@ const Expertise = () => {
               className="animate-card relative p-6 md:p-8 bg-white/40 backdrop-blur-sm rounded-2xl md:rounded-3xl border border-[#9B8B7A]/10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group"
             >
               {/* Number */}
-              <span className={`absolute top-4 right-4 md:top-6 md:right-6 text-5xl md:text-7xl font-['Marcellus'] transition-all duration-500 ${
+              <span className={`absolute top-4 right-4 md:top-6 md:right-6 text-5xl md:text-7xl    transition-all duration-500 ${
                 hoveredIndex === index ? 'text-[#E6B8A2]/20 scale-110' : 'text-[#9B8B7A]/10'
               }`}>
                 {area.id}
               </span>
 
               {/* Title */}
-              <h3 className={`text-xl md:text-2xl lg:text-3xl xl:text-4xl font-['Marcellus'] mb-2 md:mb-3 pr-8 md:pr-0 transition-all duration-300 ${
+              <h3 className={`text-xl md:text-2xl lg:text-3xl xl:text-4xl    mb-2 md:mb-3 pr-8 md:pr-0 transition-all duration-300 ${
                 hoveredIndex === index ? 'md:text-[#9B8B7A] md:translate-x-2' : 'text-[#2C2C2C]'
               }`}>
                 {area.title}
@@ -143,7 +143,7 @@ const Expertise = () => {
               </p>
 
               {/* Details */}
-              <p className="text-[#5F5B57] font-['Jost'] text-xs md:text-sm leading-relaxed mb-4 md:mb-6">
+              <p className="text-[#5F5B57]    text-xs md:text-sm leading-relaxed mb-4 md:mb-6">
                 {area.details}
               </p>
 

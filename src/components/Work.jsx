@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Work = () => {
   const [activeProject, setActiveProject] = useState(null);
@@ -48,13 +49,13 @@ const Work = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
-          <span className="text-[#0D5F58] text-sm font-['Jost'] tracking-[0.3em] uppercase">
+          <span className="text-[#0D5F58] text-sm    tracking-[0.3em] uppercase">
             Featured Work
           </span>
-          <h2 className="text-4xl md:text-5xl font-['Marcellus'] text-[#1A1A1A] mt-4">
+          <h2 className="text-4xl md:text-5xl    text-[#1A1A1A] mt-4">
             Projects I'm Proud Of
           </h2>
-          <p className="text-[#1A1A1A]/70 text-lg mt-6 font-['Jost']">
+          <p className="text-[#1A1A1A]/70 text-lg mt-6   ">
             Real solutions for real businesses - from hospitality to healthcare.
           </p>
         </div>
@@ -83,7 +84,7 @@ const Work = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   
                   {/* Year Badge */}
-                  <span className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-['Jost']">
+                  <span className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm   ">
                     {project.year}
                   </span>
                 </div>
@@ -91,26 +92,26 @@ const Work = () => {
                 {/* Content */}
                 <div className="p-8">
                   <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-2xl font-['Marcellus'] text-[#1A1A1A]">
+                    <h3 className="text-2xl    text-[#1A1A1A]">
                       {project.title}
                     </h3>
-                    <a 
-                      href={project.link}
+                    <Link 
+                      to={project.link}
                       className="w-10 h-10 bg-[#F9F8F6] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                     >
                       <span className="text-[#0D5F58]">→</span>
-                    </a>
+                    </Link>
                   </div>
                   
-                  <p className="text-[#0D5F58] font-['Jost'] mb-3">{project.client}</p>
-                  <p className="text-[#1A1A1A]/70 font-['Jost'] mb-4">{project.description}</p>
+                  <p className="text-[#0D5F58]    mb-3">{project.client}</p>
+                  <p className="text-[#1A1A1A]/70    mb-4">{project.description}</p>
                   
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <span 
                         key={tag}
-                        className="px-3 py-1 bg-[#F9F8F6] text-sm text-[#1A1A1A]/70 rounded-full font-['Jost']"
+                        className="px-3 py-1 bg-[#F9F8F6] text-sm text-[#1A1A1A]/70 rounded-full   "
                       >
                         {tag}
                       </span>
@@ -129,13 +130,13 @@ const Work = () => {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <a 
-            href="#" 
-            className="inline-flex items-center gap-2 text-[#0D5F58] hover:gap-4 transition-all font-['Jost']"
+          <Link 
+            to="#" 
+            className="inline-flex items-center gap-2 text-[#0D5F58] hover:gap-4 transition-all   "
           >
             View All Projects
             <span>→</span>
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>
